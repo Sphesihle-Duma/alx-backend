@@ -25,5 +25,5 @@ class LIFOCache(BaseCaching):
             return None
         for k, v in self.cache_data.items():
             if k == key:
-                return self.cache_data[k]
+                return self.cache_data.get(k)
         return None
