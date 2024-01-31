@@ -18,4 +18,6 @@ my_cache.put("E", "Battery")
 my_cache.put("A", "Street")
 my_cache.print_cache()
 print(my_cache.get("A"))
+print(my_cache.MAX_ITEMS)
+print(list(my_cache.cache_data.keys()))
 
