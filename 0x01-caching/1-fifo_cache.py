@@ -24,7 +24,7 @@ class FIFOCache(BaseCaching):
         '''Retrive value linked to a key'''
         if key is None:
             return None
-        for k, v in self.cache.data.items():
+        for k, v in self.cache_data.items():
             if k == key:
-                return self.cache.data(k)
+                return self_cache.data(k)
         return None
