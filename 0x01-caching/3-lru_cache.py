@@ -29,5 +29,6 @@ class LRUCache(BaseCaching):
     def get(self, key):
         '''Retrieving a value linked with a key'''
         if key is None or key not in self.cache_data:
-            return
+            return None
+        self.cache_data.update_access_order(key)
         return self.cache_data.get(key)
