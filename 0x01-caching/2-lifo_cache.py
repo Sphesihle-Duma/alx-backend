@@ -12,12 +12,11 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         '''Inserting data into the cache'''
         if key is not None and item is not None:
-            self.cache_data.update(
-                {key: item}
-                )
+            self.cache_data[key] = item
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                first_key, value = self.cache_data.popitem()
-                print(f'DISCARD: {first_key}')
+                last_key = list(self.cache_data.keys())[-2]
+                del self.cache_data[last_key]
+                print(f'DISCARD: {last_key}')
 
     def get(self, key):
         '''Retriving a value linked with a key'''

@@ -20,11 +20,6 @@ class BasicCache(BaseCaching):
                 )
 
     def get(self, key):
-        '''Returning the value for the key'''
-        if key is not None:
-            print("test")
-
-    def get(self, key):
         '''returning a value'''
         if key is None:
             return None
