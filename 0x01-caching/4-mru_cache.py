@@ -28,7 +28,7 @@ class MRUCache(BaseCaching):
 
     def get(self, key):
         '''Retrieving the value linked with the key'''
-        if key is None and key is not self.cache_data:
+        if key is None and key not in self.cache_data:
             return None
         self.update_access_order(key)
         return self.cache_data.get(key)
