@@ -22,9 +22,10 @@ class MRUCache(BaseCaching):
             self.update_access_order(key)
             self.cache_data[key] = item
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+
                 remove_key = self.access_order.pop(-2)
                 del self.cache_data[remove_key]
-                print(f'DISCARD {remove_key}')
+                print(f'DISCARD: {remove_key}')
 
     def get(self, key):
         '''Retrieving the value linked with the key'''
